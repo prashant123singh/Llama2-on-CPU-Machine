@@ -8,7 +8,8 @@ B_SYS, E_SYS = "<<SYS>>\n", "\n<</SYS>>\n\n"
 
 
 
-instrutction = "Convert the following text from English to Hindi: \n\n {text}"
+#instrutction = "Convert the following text from English to Hindi: \n\n {text}"
+instrutction = "Give the proper summary of the of: \n\n {text}"
 
 SYSTEM_PROMPT= B_SYS + DEFAULT_SYSTEM_PROMPT + E_SYS
 template = B_INST + SYSTEM_PROMPT + instrutction + E_INST
@@ -25,4 +26,4 @@ llm = CTransformers(model="model/llama-2-7b-chat.ggmlv3.q4_0.bin",
 
 llmchain=LLMChain(prompt=prompt,llm=llm)
 
-print(llmchain.run("How are you?"))
+print(llmchain.run("Harry Potter"))
